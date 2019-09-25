@@ -63,15 +63,15 @@ public class GeneticAlgorithm {
 		return tournament.getFittest(0);
 	}
 
-	public Population crossoverPopulation(Population population){
+	public Population crossoverPopulation(Population population) {
         // Create new population
         Population newPopulation = new Population(population.size());
-        
+
         // Loop over current population by fitness
         for (int populationIndex = 0; populationIndex < population.size(); populationIndex++) {
             // Get parent1
             Individual parent1 = population.getFittest(populationIndex);
-            
+
             // Apply crossover to this individual?
             if (this.crossoverRate > Math.random() && populationIndex >= this.elitismCount) {
                 // Find parent2 with tournament selection
@@ -122,6 +122,39 @@ public class GeneticAlgorithm {
                 newPopulation.setIndividual(populationIndex, parent1);
             }
         }
+        return newPopulation;
+    }
+
+    public Population mutatePopulation(Population population){
+        // Initialize new population
+        Population newPopulation = new Population(this.populationSize);
+        // Loop over current population by fitness
+        for (int populationIndex = 0; populationIndex <
+            population.size(); populationIndex++) {
+            Individual individual = population.getFittest(populationIndex);
+            // Skip mutation if this is an elite individual
+            if (populationIndex >= this.elitismCount) {
+                //System.out.println("Mutating population member "+populationIndex);
+                // Loop over individual's genes
+                for (int geneIndex = 0; geneIndex < individual.getChromosomeLength(); geneIndex++) {
+                    // Does this gene need mutation?
+                    if (this.mutationRate > Math.random()) {
+                        // Get new gene position
+                        int newGenePos = (int) (Math.random() *
+                        individual.getChromosomeLength());
+                        // Get genes to swap
+                        int gene1 = individual.getGene(newGenePos);
+                        int gene2 = individual.getGene(geneIndex);
+                        // Swap genes
+                        individual.setGene(geneIndex, gene1);
+                        individual.setGene(newGenePos, gene2);
+                    }
+                }
+            }
+            // Add individual to population
+            newPopulation.setIndividual(populationIndex, individual);
+        }
+        // Return mutated population
         return newPopulation;
     }
 }
