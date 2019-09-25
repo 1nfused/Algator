@@ -60,6 +60,7 @@ public class Population {
 	public Individual getIndividual(int offset) {
 		return population[offset];
 	}
+
 	public void shuffle() {
 		Random rnd = new Random();
 		for (int i = population.length - 1; i > 0; i--) {
@@ -70,23 +71,26 @@ public class Population {
 		}
 	}
 
-	public double calcFitness(Individual individual) {
-		// Track number of correct genes
-		int correctGenes = 0;
-		// Loop over individual's genes
-		for (int geneIndex = 0; geneIndex < individual.getChromosomeLength(); geneIndex++) {
-			// Add one fitness point for each "1" found
-			if (individual.getGene(geneIndex) == 1) {
-				correctGenes += 1;
-			}
-		}
+	 public double calcFitness(Individual individual, City cities[]){
+        // Get fitness
+        Route route = new Route(individual, cities);
+        double fitness = 1 / route.getDistance();
+                
+        // Store fitness
+        individual.setFitness(fitness);
+        
+        return fitness;
+    }
 
-		// Calculate fitness
-		double fitness = (double) correctGenes / individual.
-		getChromosomeLength();
-
-		// Store fitness
-		individual.setFitness(fitness);
-		return fitness;
-	}
+    public void evalPopulation(Population population, City cities[]){
+        double populationFitness = 0;
+        
+        // Loop over population evaluating individuals and summing population fitness
+        for (Individual individual : population.getIndividuals()) {
+            populationFitness += this.calcFitness(individual, cities);
+        }
+        
+        double avgFitness = populationFitness / population.size();
+        population.setPopulationFitness(avgFitness);
+    }
 }
