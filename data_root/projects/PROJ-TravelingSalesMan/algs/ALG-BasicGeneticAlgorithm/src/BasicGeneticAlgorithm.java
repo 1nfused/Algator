@@ -21,7 +21,7 @@ public class BaseGeneticAlgorithm extends BasicSortAbsAlgorithm {
     BaseGeneticAlgorithm bga = new BaseGeneticAlgorithm(generations, num_cities, shortestDistance);
 
     // Execute path finding
-    return bga.calcShortestDistance();
+    returnb ga.calcShortestDistance();
 }
 
 class BaseGeneticAlgorithm  {
