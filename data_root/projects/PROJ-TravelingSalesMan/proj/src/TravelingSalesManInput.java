@@ -5,17 +5,20 @@ import si.fri.algotest.execute.AbstractInput;
  */
 public class TravelingSalesManInput extends AbstractInput {
 
-  // TODO: define fields to hold the input data of an algorithm
-  // ...
+  public int maxGenerations;
+  public int numberOfCities;
+  public int shortestDistance;
 
-  
-  public TravelingSalesManInput(/* TODO: define appropriate constructor parameters */) {    
-    // this.parameter = parameter;
+  public TravelingSalesManInput(int maxGenerations, int numberOfCities, int shortestDistance) {
+    this.maxGenerations = maxGenerations;
+    this.numberOfCities = numberOfCities;
+    this.shortestDistance = shortestDistance;
   }
-      
+
   @Override
   public String toString() {
-    // TODO: provide a handy TravelingSalesManInput string representation (include only important data)
-    return super.toString();
+    return super.toString() + "Shortest distance = " + this.shortestDistance
+    + "| Input parameters - " + this.numberOfCities
+    + " number of cities, " + this.maxGenerations + " max generations ";
   }
 }
