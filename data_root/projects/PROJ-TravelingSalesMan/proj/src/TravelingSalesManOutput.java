@@ -2,26 +2,26 @@ import si.fri.algotest.execute.AbstractOutput;
 import si.fri.algotest.execute.AbstractTestCase;
 
 /**
- * 
+ *
  * @author ...
  */
 public class TravelingSalesManOutput extends AbstractOutput {
 
-  // TODO: define fields to hold the output data of an algorithm
-  // ...
-  
-  public TravelingSalesManOutput(/* TODO: define appropriate constructor parameters */) {    
-    // this.parameter = parameter;
+  public int shortestDistance;
+
+  public TravelingSalesManOutput() {} // TODO: Is this needed?
+  public TravelingSalesManOutput(int shortestDistance) {
+    this.shortestDistance = shortestDistance;
   }
-  
-  
+
+
   @Override
   public String toString() {
-    // TODO: provide a handy TravelingSalesManOutput string representation (include only important data)
-    return super.toString();
+    return super.toString() + ", Shortest distance = " +
+    Integer.toString(this.shortestDistance);
   }
-  
-  
+
+
   @Override
   protected Object getIndicatorValue(AbstractTestCase testCase, AbstractOutput algorithmOutput, String indicatorName) {
     TravelingSalesManTestCase travelingSalesManTestCase        = (TravelingSalesManTestCase) testCase;
@@ -36,7 +36,7 @@ public class TravelingSalesManOutput extends AbstractOutput {
       case "Check":
         return "nOK";
     }
-    
+
     return null;
   }
 }

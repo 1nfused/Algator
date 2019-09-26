@@ -17,8 +17,7 @@ public class TravelingSalesManInput extends AbstractInput {
 
   @Override
   public String toString() {
-    return super.toString() + "Shortest distance = " + this.shortestDistance
-    + "| Input parameters - " + this.numberOfCities
+    return super.toString() + ", Input parameters - " + this.numberOfCities
     + " number of cities, " + this.maxGenerations + " max generations ";
   }
 }
