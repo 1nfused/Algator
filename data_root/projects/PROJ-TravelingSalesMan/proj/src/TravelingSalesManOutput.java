@@ -3,7 +3,7 @@ import si.fri.algotest.execute.AbstractTestCase;
 
 /**
  *
- * @author ...
+ * @author Luka
  */
 public class TravelingSalesManOutput extends AbstractOutput {
 
