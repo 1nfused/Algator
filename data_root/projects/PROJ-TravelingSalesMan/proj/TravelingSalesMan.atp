@@ -10,8 +10,8 @@
   "EMExecFamily": "",
   "CNTExecFamily": "",
   "JVMExecFamily": "",
-  "ProjPresenters": [],
+  "ProjPresenters": ["pPresenter1"],
   "AlgPresenters": [],
   "MainProjPresenters": [],
-  "MainAlgPresenters": []
+  "MainAlgPresenters": ["maPresenter1"]
 }}

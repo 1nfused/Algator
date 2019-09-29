@@ -3,33 +3,34 @@ import java.util.Comparator;
 import java.util.Random;
 
 
-public class BaseGeneticAlgorithm extends BasicSortAbsAlgorithm {
+public class BaseGeneticAlgorithm extends TravelingSalesManAbsAlgorithm {
 
-  @Override
-  protected TravellingSalesManOutput execute(TravellingSalesManInput input) {
-    TravellingSalesManOutput result = new TravellingSalesManOutput();
+	@Override
+	protected TravellingSalesManOutput execute(TravellingSalesManInput input) {
+		TravellingSalesManOutput result = new TravellingSalesManOutput();
 
-    execute(input.maxGenerations, input.numberOfCities, input.shortestDistance);
+	    execute(input.maxGenerations, input.numberOfCities, input.shortestDistance);
 
-    result.shortestDistance = input.shortestDistance;
+	    result.shortestDistance = input.shortestDistance;
 
-    return result;
-  }
+	    return result;
+	}
 
-  private int execute(int generations, int num_cities, int shortestDistance) {
-  	// Create base genetic algorithm
-    BaseGeneticAlgorithm bga = new BaseGeneticAlgorithm(generations, num_cities, shortestDistance);
+  	private int execute(int generations, int num_cities, int shortestDistance) {
+  		// Create base genetic algorithm
+    	GeneticAlgorithmWrapper gaw = new GeneticAlgorithmWrapper(generations, num_cities, shortestDistance);
 
-    // Execute path finding
-    returnb ga.calcShortestDistance();
+    	// Execute path finding
+    	return gaws.calcShortestDistance();
+	}
 }
 
-class BaseGeneticAlgorithm  {
+class GeneticAlgorithmWrapper  {
 
 	int maxGenerations;
 	int numberOfCities;
 
-	public BaseGeneticAlgorithm(int maxGenerations, int numberOfCities, int shortestDistance) {
+	public GeneticAlgorithm(int maxGenerations, int numberOfCities, int shortestDistance) {
 		this.maxGenerations = maxGenerations;
 		this.numberOfCities = numberOfCities;
 	}
@@ -40,8 +41,8 @@ class BaseGeneticAlgorithm  {
 		// Loop to create random cities
 		for (int cityIndex = 0; cityIndex < numCities; cityIndex++) {
 			// Generate x,y position
-			int xPos = (int) (100 * Math.random());
-			int yPos = (int) (100 * Math.random());
+			int xPos = (int) (100 * Math.random()); // TODO: Grid size
+			int yPos = (int) (100 * Math.random()); // TODO: Grid size
 			// Add city
 			cities[cityIndex] = new City(xPos, yPos);
 		}
