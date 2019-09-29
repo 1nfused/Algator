@@ -3,7 +3,7 @@ import si.fri.algotest.execute.AbstractTestCase;
 
 /**
  *
- * @author ...
+ * @author Luka
  */
 public class TravelingSalesManTestCase extends AbstractTestCase {
 
@@ -26,8 +26,6 @@ public class TravelingSalesManTestCase extends AbstractTestCase {
     inputParameters.setVariable("Path", path);
 
     String[] fields = testCaseDescriptionLine.split(":");
-    throw new Exception(fields);
-
 
     // ... and finally, create a test case determined by these parameters
     return generateTestCase(inputParameters);

@@ -1,62 +1,25 @@
 {
   "Result":
   {
-    "ParameterOrder"   : ["Test", "Group", "N"],
-    "IndicatorOrder"   : ["Tfirst", "Tmin", "Tavg", "Tmax", "Tsum", "Check"],
+    "ParameterOrder"   : ["P", "G"],
+    "IndicatorOrder"   : ["Check"],
 
     "Parameters":   [
-      {
-       "Name":        "Test",
-       "Description": "The name of the test",
-       "Type":        "string",
-       "Meta":        {"Default": "Test"}
-      },
       {
        "Name":        "P",
        "Description": "Population size (number of cities)",
        "Type":        "int",
-       "Meta":        {"Values": "50 - 15000"}
+       "Meta":        {"Values": "50 - 500"}
       },
       {
        "Name":        "G",
        "Description": "Max number of generations",
        "Type":        "int",
-       "Meta":        {"Values": "100 - 3000"}
+       "Meta":        {"Values": "100 - 15000"}
       }
     ],
 
     "Indicators":   [
-      {
-       "Name"         : "Tfirst",
-       "Description"  : "Shortest distance calculation FIRST time",
-       "Type"         : "timer",
-       "Meta"         : {"ID" : 0, "STAT": "FIRST"}
-      },
-
-      {
-       "Name"         : "Tmax",
-       "Description"  : "Shortest distance calculation MAX time",
-       "Type"         : "timer",
-       "Meta"         : {"ID" : 0, "STAT": "MAX"}
-      },
-      {
-       "Name"        : "Tmin",
-       "Description" : "Shortest distance calculation MIN time",
-       "Type"        : "timer",
-       "Meta"        : {"ID" : 0, "STAT": "MIN"}
-      },
-      {
-       "Name"         : "Tavg",
-       "Description"  : "Shortest distance calculation AVG time",
-       "Type"         : "timer",
-       "Meta"         : {"ID" : 0, "STAT": "AVG"}
-      },
-      {
-       "Name"        : "Tsum",
-       "Description" : "Shortest distance calculation SUM  time",
-       "Type"        : "timer",
-       "Meta"        : {"ID" : 0, "STAT": "SUM"}
-      },
       {
        "Name"        : "Check",
        "Description" : "The correctness of the algorithm (OK or NOK)",
