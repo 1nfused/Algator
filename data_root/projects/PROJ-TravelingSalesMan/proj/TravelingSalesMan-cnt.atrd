@@ -1,15 +1,15 @@
 {
   "Result":
-  { 
-    "IndicatorOrder" : ["CNT1"],    	
-  
+  {
+    "IndicatorOrder" : ["CNT1"],
 
-    "Indicators":   [     
+
+    "Indicators":   [
       {
-       "Name":        "CNT1",             
-       "Description": "Description of CNT1", 
-       "Type":        "counter"   
-      }      
+       "Name":        "CNT1",
+       "Description": "Description of CNT1",
+       "Type":        "counter"
+      }
     ]
   }
 }

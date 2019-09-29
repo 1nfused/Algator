@@ -27,7 +27,31 @@ public class TravelingSalesManTestCase extends AbstractTestCase {
 
     String[] fields = testCaseDescriptionLine.split(":");
 
-    // ... and finally, create a test case determined by these parameters
+    if (fields.length < 4) {
+      return null;
+    }
+
+    // testName
+    inputParameters.setVariable("Test", fields[0]);
+
+    // propulation size
+    int populationSize;
+    try {
+      populationSize = Integer.parseInt(fields[1]);
+    } catch (Exception e) {
+      return null;
+    }
+    inputParameters.setVariable("P", populationSize);
+
+    // Max generations
+    int maxGenerations;
+    try {
+      maxGenerations = Integer.parseInt(fields[2]);
+    } catch (Exception e) {
+      return null;
+    }
+    inputParameters.setVariable("G", maxGenerations);
+
     return generateTestCase(inputParameters);
   }
 
@@ -35,20 +59,14 @@ public class TravelingSalesManTestCase extends AbstractTestCase {
   public TravelingSalesManTestCase generateTestCase(Variables inputParameters) {
     String path       = inputParameters.getVariable("Path",    "").getStringValue();
 
-    // TODO:
-    // ... read the values of the parameters and create a corresponding test case
-
-    // ... Example: if test case is and array of integers of size "N"
-    // int size = inputParameters.getVariable("N", 0).getIntValue();
-    // int [] array = new int[size];
-
-
-
     // create a test case
     TravelingSalesManTestCase travelingSalesManTestCase = new TravelingSalesManTestCase();
-    travelingSalesManTestCase.setInput(new TravelingSalesManInput(/* TODO: add parameters for constructor */));
+    travelingSalesManTestCase.setInput(new TravelingSalesManInput(inputParameters));
     travelingSalesManTestCase.getInput().setParameters(inputParameters);
-    travelingSalesManTestCase.setExpectedOutput(new TravelingSalesManOutput(/* TODO: add parameters for constructor */));
+
+    int expectedResult = inputParameters.populationSize;
+
+    travelingSalesManTestCase.setExpectedOutput(new TravelingSalesManOutput());
 
     return travelingSalesManTestCase;
 

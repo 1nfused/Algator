@@ -3,7 +3,7 @@ import java.util.Comparator;
 import java.util.Random;
 
 
-public class BaseGeneticAlgorithm extends TravelingSalesManAbsAlgorithm {
+public class BasicGeneticAlgorithmAlgorithm {
 
 	@Override
 	protected TravellingSalesManOutput execute(TravellingSalesManInput input) {
@@ -18,25 +18,35 @@ public class BaseGeneticAlgorithm extends TravelingSalesManAbsAlgorithm {
   	private void execute(int generations, int num_cities, int shortestDistance) {
   		// Create base genetic algorithm
     	GeneticAlgorithmWrapper gaw = new GeneticAlgorithmWrapper(generations, num_cities, shortestDistance);
-    	shortestDistance = gaws.calcShortestDistance();
+    	shortestDistance = gaw.calcShortestDistance();
 	}
+
+	// public static void main(String[] args) {
+	// 	int generations = 3000;
+	// 	int num_cities = 100;
+	// 	double shortestDistance = 0.0;
+	// 	GeneticAlgorithmWrapper gaw = new GeneticAlgorithmWrapper(generations, num_cities, shortestDistance);
+	// 	shortestDistance = gaw.calcShortestDistance();
+	// }
 }
 
 class GeneticAlgorithmWrapper  {
 
 	int maxGenerations;
 	int numberOfCities;
+	double shortestDistance;
 
-	public GeneticAlgorithm(int maxGenerations, int numberOfCities, int shortestDistance) {
+	public GeneticAlgorithmWrapper(int maxGenerations, int numberOfCities, double shortestDistance) {
 		this.maxGenerations = maxGenerations;
 		this.numberOfCities = numberOfCities;
+		this.shortestDistance = shortestDistance;
 	}
 
-	public int calcShortestDistance() {
+	public double calcShortestDistance() {
 		City cities[] = new City[this.numberOfCities];
 
 		// Loop to create random cities
-		for (int cityIndex = 0; cityIndex < numCities; cityIndex++) {
+		for (int cityIndex = 0; cityIndex < this.numberOfCities; cityIndex++) {
 			// Generate x,y position
 			int xPos = (int) (100 * Math.random()); // TODO: Grid size
 			int yPos = (int) (100 * Math.random()); // TODO: Grid size
@@ -75,6 +85,7 @@ class GeneticAlgorithmWrapper  {
 		// Set shortest distance to input obj
 		shortestDistance = route.getDistance();
 		System.out.println("Best distance: " + route.getDistance());
+		return route.getDistance();
 	}
 }
 

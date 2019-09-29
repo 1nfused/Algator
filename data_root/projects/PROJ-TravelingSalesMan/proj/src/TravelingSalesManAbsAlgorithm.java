@@ -15,7 +15,6 @@ public abstract class TravelingSalesManAbsAlgorithm extends AbstractAlgorithm {
 
   @Override
   public void run() {
-  	throw new Exception("Haha");
     algorithmOutput = execute(getCurrentTestCase().getInput());
   }
 }
