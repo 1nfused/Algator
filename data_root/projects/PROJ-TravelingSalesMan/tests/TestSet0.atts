@@ -1,0 +1,12 @@
+{
+  "TestSet": {
+    "Name"             : "TestSet0",
+    "ShortName"        : "TS0",
+    "Description"      : "Test with variable city size and constant generations",
+    "N"                : "6",
+    "TestRepeat"       : "1",
+    "TimeLimit"        : "1200",
+    "TestSetDescHTML"  : "TestSet0.html"
+  }
+}
+
