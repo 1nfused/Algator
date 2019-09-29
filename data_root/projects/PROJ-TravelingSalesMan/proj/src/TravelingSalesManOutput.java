@@ -28,13 +28,10 @@ public class TravelingSalesManOutput extends AbstractOutput {
     TravelingSalesManOutput   travelingSalesManAlgorithmOutput = (TravelingSalesManOutput) algorithmOutput;
 
     switch (indicatorName) {
-      // TODO: for each indicator defined in the atrd file provide a "case" to determnine its value
-      //case "indicator_name" :
-      //  using the given test case travelingSalesManTestCase (which includes the input and the expected output)
-      //    and the given travelingSalesManAlgorithmOutput (the actual output of the algorithm) calculate indicator_value
-      //  return indicator_value;
       case "Check":
-        return "nOK";
+        boolean checkOK (travelingSalesManAlgorithmOutput.shortestDistance
+                         instanceof Double);
+        return checkOK ? "OK" : "NOK";
     }
 
     return null;

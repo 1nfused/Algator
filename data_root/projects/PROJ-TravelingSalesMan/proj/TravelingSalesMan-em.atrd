@@ -1,30 +1,67 @@
 {
   "Result":
-  { 
-    "ParameterOrder" : ["N"],
-    "Parameters":   [	    
-      {
-       "Name"         : "N",             
-       "Description"  : "The size of the test", 
-       "Type"         : "int",  
-       "Meta"         : {"Default": 1000, "Min": 2, "Step": 1000}     
-      }
-    ], 
+  {
+    "ParameterOrder"   : ["Test", "Group", "N"],
+    "IndicatorOrder"   : ["Tfirst", "Tmin", "Tavg", "Tmax", "Tsum", "Check"],
 
-    "IndicatorOrder" : ["Tmin", "Check"],
-    "Indicators":   [	    
+    "Parameters":   [
       {
-       "Name"        : "Tmin",             
-       "Description" : "MIN time of execution",             
-       "Type"        : "timer",          
-       "Subtype"     : {"ID" : 0, "STAT": "MIN"}        
+       "Name":        "Test",
+       "Description": "The name of the test",
+       "Type":        "string",
+       "Meta":        {"Default": "Test"}
       },
       {
-       "Name"        : "Check",             
-       "Description" : "The correctness of the algorithm (OK or NOK)", 
-       "Type"        : "string"       
+       "Name":        "P",
+       "Description": "Population size (number of cities)",
+       "Type":        "int",
+       "Meta":        {"Values": "50 - 15000"}
+      },
+      {
+       "Name":        "G",
+       "Description": "Max number of generations",
+       "Type":        "int",
+       "Meta":        {"Values": "100 - 3000"}
+      }
+    ],
+
+    "Indicators":   [
+      {
+       "Name"         : "Tfirst",
+       "Description"  : "Shortest distance calculation FIRST time",
+       "Type"         : "timer",
+       "Meta"         : {"ID" : 0, "STAT": "FIRST"}
+      },
+
+      {
+       "Name"         : "Tmax",
+       "Description"  : "Shortest distance calculation MAX time",
+       "Type"         : "timer",
+       "Meta"         : {"ID" : 0, "STAT": "MAX"}
+      },
+      {
+       "Name"        : "Tmin",
+       "Description" : "Shortest distance calculation MIN time",
+       "Type"        : "timer",
+       "Meta"        : {"ID" : 0, "STAT": "MIN"}
+      },
+      {
+       "Name"         : "Tavg",
+       "Description"  : "Shortest distance calculation AVG time",
+       "Type"         : "timer",
+       "Meta"         : {"ID" : 0, "STAT": "AVG"}
+      },
+      {
+       "Name"        : "Tsum",
+       "Description" : "Shortest distance calculation SUM  time",
+       "Type"        : "timer",
+       "Meta"        : {"ID" : 0, "STAT": "SUM"}
+      },
+      {
+       "Name"        : "Check",
+       "Description" : "The correctness of the algorithm (OK or NOK)",
+       "Type"        : "string"
       }
     ]
   }
 }
- 
