@@ -3,7 +3,7 @@ import java.util.Comparator;
 import java.util.Random;
 
 
-public class BasicGeneticAlgorithmAlgorithm {
+public class BasicGeneticAlgorithmAlgorithm extends TravelingSalesManAbsAlgorithm {
 
 	@Override
 	protected TravellingSalesManOutput execute(TravellingSalesManInput input) {
