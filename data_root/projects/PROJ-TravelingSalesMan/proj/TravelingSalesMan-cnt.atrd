@@ -7,7 +7,7 @@
     "Indicators":   [
       {
        "Name":        "CNT1",
-       "Description": "Description of CNT1",
+       "Description": "Number of counters",
        "Type":        "counter"
       }
     ]
