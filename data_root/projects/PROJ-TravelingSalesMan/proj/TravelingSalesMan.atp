@@ -1,0 +1,17 @@
+{"Project": {
+  "Name": "TravelingSalesMan",
+  "Description": "short_project_description",
+  "Author": "author_name",
+  "Date": "09, 2019",
+  "Algorithms": ["BasicGeneticAlgorithm"],
+  "TestSets": [],
+  "ProjectJARs": [],
+  "AlgorithmJARs": [],
+  "EMExecFamily": "",
+  "CNTExecFamily": "",
+  "JVMExecFamily": "",
+  "ProjPresenters": ["pPresenter1"],
+  "AlgPresenters": ["aPresenter1"],
+  "MainProjPresenters": [],
+  "MainAlgPresenters": ["maPresenter1"]
+}}

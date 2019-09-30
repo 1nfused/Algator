@@ -1,0 +1,26 @@
+{
+  "Presenter": {
+    "Name": "maPresenter1",
+    "Title":        "t_maPresenter1",
+    "ShortTitle":   "st_maPresenter1",
+    "Description":  "d_maPresenter1",
+    "Query"   :     {}, 
+
+    "HasTable":     true, 
+    "Columns" :     [], 
+
+    "HasGraph":       true, 
+    "categoryLabels": false, 
+    "graphType":      "line", 
+    "gridX":          true, 
+    "gridY":          true, 
+    "logScale":       false, 
+    "manData":        {},  
+    "zoom":           true,
+    "subchart":       false, 
+    "xAxis":          "", 
+    "yAxes":          [], 
+    "xAxisTitle":     "x_maPresenter1", 
+    "yAxisTitle":     "y_maPresenter1"    
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "Result":
+  {
+    "ParameterOrder"   : ["P", "G"],
+    "IndicatorOrder"   : ["Check"],
+
+    "Parameters":   [
+      {
+       "Name":        "P",
+       "Description": "Population size (number of cities)",
+       "Type":        "int",
+       "Meta":        {"Values": "50 - 500"}
+      },
+      {
+       "Name":        "G",
+       "Description": "Max number of generations",
+       "Type":        "int",
+       "Meta":        {"Values": "100 - 15000"}
+      }
+    ],
+
+    "Indicators":   [
+      {
+       "Name"        : "Check",
+       "Description" : "The correctness of the algorithm (OK or NOK)",
+       "Type"        : "string"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+/app
+/data_local
+/data_root/.DS_Store
+/data_root/algator.acfg
+/data_root/log/
+/data_root/projects/.DS_Store
+/data_root/projects/PROJ-BasicMatrixMul/
+/data_root/projects/PROJ-BasicSort/
+/data_root/schema/
+
